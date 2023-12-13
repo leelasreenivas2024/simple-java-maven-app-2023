@@ -1,4 +1,4 @@
-FROM maven:3.4 AS build
+FROM maven:3.5 AS build
 MAINTAINER "phani"
 COPY . .
 RUN mvn clean install package
