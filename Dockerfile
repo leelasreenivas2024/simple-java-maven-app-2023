@@ -1,6 +1,7 @@
-# Pull base image 
-From tomcat 
+FROM maven AS build
+MAINTAINER "phani"
+COPY . .
+RUN mvn clean install
 
-# Maintainer 
-MAINTAINER "Phani" 
-COPY webapp/target/webapp.war /usr/local/tomcat/webapps
+FROM tomcat
+COPY --from=build /webapp/target/webapp.war /usr/local/tomcat/webapps
