@@ -3,6 +3,6 @@
   tasks:
     - name: copy war file from jenkins to tomcat
       copy:
-        src: webapp/target/webapp.war
+        src: webapp/target/webapp.war #add war file
         dest: /opt/tomcat/webapps/
 #add testing comit
