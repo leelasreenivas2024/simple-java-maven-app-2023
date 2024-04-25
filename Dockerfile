@@ -3,5 +3,5 @@ MAINTAINER "phani"
 COPY . .
 RUN mvn clean install package
 
-FROM tomcat
+FROM tomcat  #add tomact version
 COPY --from=build /webapp/target/webapp.war /usr/local/tomcat/webapps
